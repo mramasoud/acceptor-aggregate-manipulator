@@ -1,0 +1,12 @@
+server:
+  port: 8001
+
+spring:
+  profiles:
+    active: {spring.profiles.active}
+  application:
+    name: AcceptorAggregateManipulator
+
+
+
+

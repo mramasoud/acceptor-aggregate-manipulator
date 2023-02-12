@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: mms_biz_AcceptorAggregateManipulator_ms
+  config:
+    activate:
+      on-profile: classic
+  cloud:
+    config:
+      uri: http://de.mms.com:15000
+      label: main
+      # fail-fast: true
+---
+spring:
+  application:
+    name: mms_biz_AcceptorAggregateManipulator_ms
+  config:
+    activate:
+      on-profile: containerized
+  cloud:
+    config:
+      uri: http://mms-infra-config-server:15000
+      label: main
+      #fail-fast: true
+      retry:
+        initial-interval: 4000
+        max-attempts: 5
+        multiplier: 2.0
+        max-interval: 6000
